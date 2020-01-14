@@ -30,8 +30,6 @@ func main() {
         log.Fatal(err)
     }
 
-    b.Start()
-
     // b.Handle("/hello", func(m *tb.Message) {
 	// 	b.Send(m.Sender, "Hi!")
     // })
@@ -40,6 +38,7 @@ func main() {
         b.Send(m.Sender, "You entered "+m.Text)
     })
 
+    b.Start()
 }
 
 // (setq tab-width 4)
