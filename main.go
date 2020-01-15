@@ -3,6 +3,7 @@ package main
 import (
     "log"
     "os"
+    "fmt"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -29,6 +30,8 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
+
+    fmt.Fprintf(os.Stderr, "ENV: %s", os.Environ())
 
     // b.Handle("/hello", func(m *tb.Message) {
 	// 	b.Send(m.Sender, "Hi!")
