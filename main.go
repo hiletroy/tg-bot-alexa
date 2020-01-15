@@ -1,3 +1,5 @@
+// -*- tab-width: 4; -*-
+
 package main
 
 import (
@@ -11,8 +13,8 @@ import (
 func main() {
     var (
         port      = os.Getenv("PORT")
-        publicURL = os.Getenv("HEROKU_APP_NAME") + ".herokuapp.com" // you must add it to your config vars
-        token     = os.Getenv("TOKEN")      // you must add it to your config vars
+        token     = os.Getenv("TOKEN")
+        publicURL = os.Getenv("HEROKU_APP_NAME") + ".herokuapp.com"
     )
 
     webhook := &tb.Webhook{
@@ -45,13 +47,6 @@ func main() {
 		[]tb.InlineButton{inlineBtn1, inlineBtn2},
 	}
 
-    fmt.Fprintf(os.Stderr, "ENV: %s", os.Environ())
-
-    // b.Handle("/hello", func(m *tb.Message) {
-	// 	b.Send(m.Sender, "Hi!")
-    // })
-
-
 	b.Handle(&inlineBtn1, func(c *tb.Callback) {
         // Required for proper work
 		b.Respond(c, &tb.CallbackResponse{
@@ -82,5 +77,4 @@ func main() {
     b.Start()
 }
 
-// (setq tab-width 4)
 // (setq indent-tabs-mode nil)
