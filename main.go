@@ -11,7 +11,7 @@ import (
 func main() {
     var (
         port      = os.Getenv("PORT")
-        publicURL = os.Getenv("PUBLIC_URL") // you must add it to your config vars
+        publicURL = os.Getenv("HEROKU_APP_NAME") + ".herokuapp.com" // you must add it to your config vars
         token     = os.Getenv("TOKEN")      // you must add it to your config vars
     )
 
