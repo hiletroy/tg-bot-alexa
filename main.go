@@ -38,7 +38,7 @@ func main() {
     // })
 
     b.Handle("/hello", func(m *tb.Message) {
-        b.Send(m.Sender, "You entered "+m.Text)
+        b.Send(m.Sender, "You entered "+m.Text+" ("+m.Payload+"(")
     })
 
     b.Start()
