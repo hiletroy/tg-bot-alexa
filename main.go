@@ -41,6 +41,10 @@ func main() {
 		Text:   "Sun 🌞",
 	}
 
+	inlineKeys := [][]tb.InlineButton{
+		[]tb.InlineButton{inlineBtn1, inlineBtn2},
+	}
+
     fmt.Fprintf(os.Stderr, "ENV: %s", os.Environ())
 
     // b.Handle("/hello", func(m *tb.Message) {
@@ -74,10 +78,6 @@ func main() {
 			"Day or night, you choose",
 			&tb.ReplyMarkup{InlineKeyboard: inlineKeys})
 	})
-
-	inlineKeys := [][]tb.InlineButton{
-		[]tb.InlineButton{inlineBtn1, inlineBtn2},
-	}
 
     b.Start()
 }
