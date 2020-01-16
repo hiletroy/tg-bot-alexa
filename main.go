@@ -74,7 +74,7 @@ func main() {
 
 	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 
-    if _, err := db.Exec("CREATE TABLE IF NOT EXISTS messages (id int primary key, messages text, date timestamp)");
+    if _, err := db.Exec("CREATE TABLE IF NOT EXISTS messages (id int primary key, chatid int, username text, messages text, date timestamp)");
     err != nil {
         log.Fatal(err)
     }
